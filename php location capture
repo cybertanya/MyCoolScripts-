@@ -1,0 +1,15 @@
+<?php
+	$ip = getenv('HTTP_CLIENT_IP')?:
+	getenv('HTTP_X_FORWARDED_FOR')?:
+	getenv('HTTP_X_FORWARDED')?:
+	getenv('HTTP_FORWARDED_FOR')?:
+	getenv('HTTP_FORWARDED')?:
+	getenv('REMOTE_ADDR');
+	
+	$query = @unserialize (file_get_contents("http://ip-api.com/php/{$ip}"));
+	if($query && $query['status'] == 'success'){
+		$lat = $query['lat'];
+		$lon = $query['lon'];
+	}
+	
+?>
