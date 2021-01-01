@@ -1,0 +1,5 @@
+SELECT * FROM 
+(
+    SELECT * FROM equipment_downtime ORDER BY date DESC LIMIT 10
+)
+anyVariableName ORDER by anyVariableName.date;
