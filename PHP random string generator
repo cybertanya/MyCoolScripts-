@@ -1,0 +1,7 @@
+$characters = "123456789";
+$charactersLength = strlen($characters);
+$randomString = '';
+for($i = 0; $i < 8; $i++){
+    $randomString .= $characters[rand(0, $charactersLength - 1)];
+}
+$new_user_code = $randomString;
